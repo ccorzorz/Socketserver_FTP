@@ -1,0 +1,21 @@
+|____bin                    入口目录
+| |____ftp_client_bin.py    客户端入口
+| |____ftp_server_bin.py    server端入口
+| |____user_manage.py       管理员入口,帐号:admin/admin
+|____conf                   配置信息目录
+| |____setting.py           配置信息
+|____data                   用户数据库目录
+| |____user.json            用户数据库
+|____document               用户目录
+| |____cc                   用户家目录
+|____download               下载目录
+| |____teset                下载文件
+|____module                 核心程序
+| |____bar.py               进度条程序
+| |____check_intact.py      校验文件一致程序
+| |____data_handle.py       数据处理程序
+| |____dirs.py              文件,目录相关程序
+| |____ftp_client.py        ftp客户端程序
+| |____ftp_manage.py        ftp成员管理程序
+| |____ftp_server.py        ftp服务端程序
+| |____pwd_handle.py        密码处理程序
