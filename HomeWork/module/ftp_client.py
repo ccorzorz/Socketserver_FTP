@@ -123,6 +123,14 @@ def dic_send_data(cmd_dic,cmd_list):
         if not os.path.exists(cmd_list[1]) or os.path.isdir(cmd_list[1]):
             cmd_dic['file_name']=None
             return cmd_dic
+        else:
+            cmd_dic['file_name']=cmd_list[1]
+            abs_filepath=cmd_list[1]
+            file_size=os.stat(abs_filepath).st_size
+            cmd_dic['file_size']=file_size
+            cmd_dic['file_md5']=module.check_intact.GetFileMd5(abs_filepath)
+            return cmd_dic
+
     else:
         #将输入的命令拆分,赋予相关的变量或者值
         abs_filepath=cmd_list[1]
@@ -168,6 +176,9 @@ def main():
             if len(cmd_list) == 0:continue
             #否则处理报头字典
             else:cmd_dic=dic_send_data(cmd_dic,cmd_list)
+
+
+            # print(cmd_dic)
             #发送报头字典
             sk.sendall(bytes(json.dumps(cmd_dic),encoding='utf8'))
             #接收服务端回执消息并打印
