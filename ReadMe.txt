@@ -1,5 +1,6 @@
 博客地址:
-    http://www.cnblogs.com/ccorz/p/5643433.html
+    http://www.cnblogs.com/ccorz/p/5662163.html
+    http://www.cnblogs.com/ccorz/p/5668427.html
 
 测试帐号:
     成员管理后台:admin/admin
@@ -19,4 +20,11 @@
 
 注意事项:
     1.需安装prettytable
-    2.使用了os.sep判断分割目录,在mac上开发的,但不确定能否在windows上正常运行
+    2.使用了os.sep判断分割目录,在mac上开发的,但不确定能否在windows上正常运行,貌似对中文文件支持有问题
+
+总结:
+    公司跑路了....要面试找工作....时间不多
+    在上周作业的基础上稍做了修改:
+    1.把server client端做了拆分
+    2.改了下put的bug,所以看起来还是比较乱的
+    下载没有暂停,所以断点下载的模式是:先检查是否已存在文件,如果存在,匹配文件MD5值,如果不同直接断点续传

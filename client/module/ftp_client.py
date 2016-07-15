@@ -121,10 +121,12 @@ def dic_send_data(cmd_dic,cmd_list):
     #put处理
     elif cmd_dic['action'] == 'put':
         if not os.path.exists(cmd_list[1]) or os.path.isdir(cmd_list[1]):
+            print('1111111111111111')
             cmd_dic['file_name']=None
             return cmd_dic
+        # elif os.path
         else:
-            cmd_dic['file_name']=cmd_list[1]
+            cmd_dic['file_name']=cmd_list[1].split(os.sep)[-1]
             abs_filepath=cmd_list[1]
             file_size=os.stat(abs_filepath).st_size
             cmd_dic['file_size']=file_size
@@ -176,6 +178,8 @@ def main():
             if len(cmd_list) == 0:continue
             #否则处理报头字典
             else:cmd_dic=dic_send_data(cmd_dic,cmd_list)
+
+            print(cmd_dic)
 
 
             # print(cmd_dic)

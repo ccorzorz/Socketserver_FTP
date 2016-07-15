@@ -299,6 +299,7 @@ get:            下载文件
         else:
             user_lib=self.current_dic
             abs_file='%s%s%s'%(user_lib,os.sep,file_name)
+            # print()
             #如果文件存在
             if os.path.exists(abs_file):
                 file_md5=module.check_intact.GetFileMd5(abs_file)
